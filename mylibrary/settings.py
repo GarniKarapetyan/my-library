@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 # CORS_ORIGIN_ALLOW_ALL = True
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -52,6 +53,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 ROOT_URLCONF = 'mylibrary.urls'
 
@@ -73,7 +76,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mylibrary.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
@@ -81,6 +83,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'djongo',
         'NAME': 'Libraries',
+        # 'NAME': BASE_DIR / 'db.json'
     }
 }
 
