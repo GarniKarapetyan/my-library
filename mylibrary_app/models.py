@@ -8,3 +8,6 @@ class Libraries(models.Model):
     price_of_books = models.IntegerField()
     budget = models.IntegerField()
     time_update = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.username
