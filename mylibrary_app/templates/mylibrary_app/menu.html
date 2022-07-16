@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="text/css" href="{% static 'mylibrary_app/css/styles.css' %}" rel="stylesheet" />
+</head>
+<body>
+{% block mainmenu %}
+<header id="header" >
+	<nav class="links" style="--items: 5;" >
+        {% for m in menu %}
+        <a href = "{% url m.url_name %}">{{m.title}}</a>
+        {% endfor %}
+		<span class="line"></span>
+	</nav>
+</header>
+{% endblock mainmenu %}
+
+{% block content %}
+{% endblock content %}
+
+</body>
+</html>

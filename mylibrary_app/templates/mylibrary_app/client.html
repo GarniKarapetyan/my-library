@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'mylibrary_app/menu.html' %}
+
+{% block content %}
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -7,7 +8,7 @@
     .button {
       border: none;
       color: white;
-      padding: 15px 32px;
+      padding: 10px 50px;
       text-align: center;
       text-decoration: none;
       display: inline-block;
@@ -19,6 +20,15 @@
 </style>
 </head>
 <body>
-<center><button type="button", class="button button1">Use your login</button></center>
+<center><button type="button", class="button button1">This is your account</button></center>
+<table>
+    {% for p in posts %}
+    <tr>
+        <td>{{p.books}}</td>
+        <td>{{p.budget}}</td>
+    </tr>
+    {% endfor %}
+</table>
 </body>
-</html>
+
+{% endblock content %}

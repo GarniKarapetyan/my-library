@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+{% extends 'mylibrary_app/menu.html' %}
+
+{% block content %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,13 +14,14 @@
       text-decoration: none;
       display: inline-block;
       font-size: 16px;
-      margin: 0px 0px;
+      margin: 222px 2px;
       cursor: pointer;
     }
 .button1 {background-color: #4CAF50;} /* Green */
 </style>
 </head>
 <body>
-<a href=http://127.0.0.1:8000/mylibrary/login/><button type="button", class="button button1">Log In</button></a>
+<center><a href="{% url 'client' %}"><button type="button", class="button button1">Log In</button></a></center>
 </body>
 </html>
+{% endblock %}
